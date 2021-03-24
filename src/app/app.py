@@ -75,8 +75,8 @@ def get_model_dict(dir):
 
 
 def generate_model_selector_field(models):
-    st.subheader("Select a model")
-    selected_model = st.selectbox("", list(models.keys()))
+    st.sidebar.subheader("Select a model")
+    selected_model = st.sidebar.selectbox("", list(models.keys()))
     # get the path to the selected model
     selected_model = models[selected_model]
     return selected_model
@@ -100,10 +100,12 @@ def generate_all_numeric_fields(field_dict):
         max_val = val[1]
         step_val = get_step_val(min_val, max_val)
         # field title
-        st.subheader(f"{key}")
+        st.sidebar.subheader(f"{key}")
         # store user input for each field as key value pairs
         input_dict[key] = [
-            st.number_input("", float(min_val), float(max_val), step=float(step_val))
+            st.sidebar.number_input(
+                "", float(min_val), float(max_val), step=float(step_val)
+            )
         ]
     return input_dict
 
@@ -143,29 +145,29 @@ def get_title_image(path="src/app/images/palmer_penguin.png"):
 def main():
     st.title("Palmer Penguin Predictor")
     title_image = get_title_image()
-    st.image(title_image)
+
     st.write(
         """The objective of this model is to predict the 
     species of penguin given the 'bill length', 'bill depth',
      'flipper length' & 'body mass'. 
      \nSimply enter your penguin's measurements, and click predict!
-     
-     Note: I have enforced some limits based on the distribution of the 
-     training data that was supplied; each measurement limit is determined by
-     determining the maximum and minimum measurements and adding and subtracting 
-     the standard deviation respectively.
-     
+    
 For more information about this dataset check out the [Palmer Penguins Dataset](https://github.com/allisonhorst/palmerpenguins)"""
     )
 
     X = read_artifact("data/processed/X_train.pkl")
+
+    st.sidebar.title("Penguin Info")
+    st.sidebar.image(title_image)
+
     field_dict = generate_all_field_ranges(X)
     input_dict = generate_all_numeric_fields(field_dict)
+
     model_dir = Path("models/")
     models = get_model_dict(model_dir)
     model_path = generate_model_selector_field(models)
 
-    p_title = "Click Predict"
+    p_title = "Click Predict!"
 
     penguin_title = st.empty()
     penguin_title.title(p_title)
@@ -183,6 +185,13 @@ For more information about this dataset check out the [Palmer Penguins Dataset](
 
         penguin.image(penguin_image)
         penguin_title.title(f"{pred.upper()}!")
+
+    st.write(
+        """ *Note: I have enforced some limits based on the distribution of the 
+     training data that was supplied; each measurement limit is determined by
+     determining the maximum and minimum measurements and adding and subtracting 
+     the standard deviation respectively.*"""
+    )
 
 
 if __name__ == "__main__":
