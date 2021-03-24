@@ -1,0 +1,23 @@
+# run conda env create --file environment.yml
+name: palmer_env
+channels:
+- conda-forge
+dependencies:
+ - python=3.8
+ - numpy
+ - requests
+ - scikit-learn
+ - pandas
+ - jupyter
+ - ipython
+ - click
+ - black
+ - ipykernel
+ - plotly
+ - scikit-image
+ - matplotlib
+ - pip
+ - pip:
+   - xgboost
+   - streamlit
+ 
