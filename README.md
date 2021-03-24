@@ -1,5 +1,27 @@
 # Palmer Penguin Streamlit Application
+
 ![Palmer Penguins Streamlit App](https://github.com/AH-Merii/palmer_penguins_streamlit_app/blob/445f4b1ee62b38e655e2d8c9d4b7f06879480a01/src/app/images/palmer_penguin.png)
+
+# About the Dataset
+Data were collected and made available by [Dr. Kristen
+Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php)
+and the [Palmer Station, Antarctica LTER](https://pal.lternet.edu/), a
+member of the [Long Term Ecological Research
+Network](https://lternet.edu/).
+
+# About
+This is a simple web application used to predict the species of the penguin from the palmer penguin dataset. The possible species are one of three:
+* Chinstrap
+* Gentoo
+* Adeli
+
+The fields used to predict the penguin species are:
+* bill length (mm)
+* bill depth (mm)
+* flipper length (mm)
+* body mass (g)
+
+The model used to predict the species is an **XGBoost** model.
 
 # Installation
 Make sure that you have installed the necessary python libraries specified in `environment.yml` or the `requirements.txt`.
