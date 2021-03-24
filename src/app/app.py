@@ -147,7 +147,7 @@ def main():
     st.write(
         """The objective of this model is to predict the 
     species of penguin given the 'bill length', 'bill depth',
-     'flipper lenght' & 'body mass'. 
+     'flipper length' & 'body mass'. 
      \nSimply enter your penguin's measurements, and click predict!
      
      Note: I have enforced some limits based on the distribution of the 
