@@ -27,7 +27,7 @@ The model used to predict the species is an **XGBoost** model.
 Make sure that you have installed the necessary python libraries specified in `environment.yml` or the `requirements.txt`.
 In my case I used miniconda3 to create a new virtual env.<br>
 `conda env create -n palmer_env -f environment.yml`<br>
-`conda activate palmer_envu`<br>
+`conda activate palmer_env`<br>
 
 This repo makes use of the Makefile. In order to make the installation process as seamless as possible make sure that you have `make` installed on your system.
 ### Windows
