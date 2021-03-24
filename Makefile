@@ -9,6 +9,7 @@ PALMER_REPO_URL = "https://raw.githubusercontent.com/allisonhorst/palmerpenguins
 clean:
 	rm -f data/raw/*.csv
 	rm -f data/processed/*.pkl
+	rm -f data/figures/*.png
 	rm -f models/*.pkl
 
 # download the dataset from the github repo
