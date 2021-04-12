@@ -45,7 +45,8 @@ After installing make simply run
 ## Streamlit
 After running make, the dataset should automatically start downloading. The dataset will automatically be cleaned and split and an xgboost model will be trained and stored in the `models/` directory.
 
-After the build is complete, you should see a prompt similar to the image below; Simply copy the address into your browser and you should be greeted with the application.
+After the build is complete, you should see a prompt similar to the image below; Simply copy the address into your browser and you should be greeted with the application.<br>
+
 <img src="https://github.com/AH-Merii/palmer_penguins_streamlit_app/blob/main/src/app/images/streamlit_prompt.png" alt="streamlit" width="400"/>
 
 Using the application is extremely simple. Simply input your penguin dimensions, and the prediction will show up in the form of a picture!
